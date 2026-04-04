@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CTABanner from "@/components/CTABanner";
@@ -59,6 +60,16 @@ export default function ServicePage({ params }: Props) {
       <section className="py-16 lg:py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
+            <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-10">
+              <Image
+                src={service.image}
+                alt={service.name}
+                fill
+                sizes="(max-width: 768px) 100vw, 768px"
+                className="object-cover"
+                priority
+              />
+            </div>
             <h1 className="font-heading text-4xl sm:text-5xl font-bold text-primary">
               {service.name}
             </h1>

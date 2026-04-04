@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Hero from "@/components/Hero";
 import ServiceCard from "@/components/ServiceCard";
 import TestimonialCard from "@/components/TestimonialCard";
@@ -8,6 +9,12 @@ import { services } from "@/data/services";
 import { reviews } from "@/data/reviews";
 import { faqGeneral } from "@/data/faq";
 import { brand, atmosphere, contacts } from "@/data/contacts";
+
+export const metadata: Metadata = {
+  title: "Студия бровей Avgust Brow Bar в Хамовниках | Оформление бровей Москва",
+  description:
+    "Профессиональное оформление бровей и ламинирование ресниц в Хамовниках. 5 мин от м. Фрунзенская. Онлайн-запись, бесплатная парковка.",
+};
 
 export default function HomePage() {
   return (
