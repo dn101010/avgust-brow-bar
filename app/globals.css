@@ -7,14 +7,41 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
-  color: #333333;
-  background-color: #fafaf8;
+  font-family: "Nunito Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #4A4440;
+  background-color: #FAF7F2;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background-color: #c5a47e;
+  background-color: #C5A47E;
   color: #ffffff;
+}
+
+/* Eyebrow label pattern */
+.eyebrow {
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #C5A47E;
+}
+
+/* Display heading */
+.heading-display {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 300;
+  color: #2A2420;
+  letter-spacing: -0.5px;
+  line-height: 1.10;
+}
+
+.heading-section {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-weight: 300;
+  color: #2A2420;
+  line-height: 1.15;
 }

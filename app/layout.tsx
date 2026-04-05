@@ -1,48 +1,51 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display } from "next/font/google";
+import { Cormorant_Garamond, Nunito_Sans } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import MobileBookingButton from "@/components/MobileBookingButton";
 import "./globals.css";
 
-const inter = Inter({
+const cormorant = Cormorant_Garamond({
   subsets: ["latin", "cyrillic"],
-  variable: "--font-inter",
+  weight: ["300", "400", "500"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
   display: "swap",
 });
 
-const playfair = Playfair_Display({
+const nunito = Nunito_Sans({
   subsets: ["latin", "cyrillic"],
-  variable: "--font-playfair",
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-nunito",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_DOMAIN || "https://avgustbrows.ru"),
   title: {
-    default: "Студия бровей Avgust Brow Bar в Хамовниках | Оформление бровей Москва",
-    template: "%s | Avgust Brow Bar",
+    default: "Август — Студия бровей и ресниц в Хамовниках, Москва",
+    template: "%s | Август",
   },
   description:
-    "Профессиональное оформление бровей и ламинирование ресниц в Хамовниках. 5 мин от м. Фрунзенская. Онлайн-запись, бесплатная парковка.",
+    "Оформление бровей, ламинирование ресниц, наращивание. 5 мин от м. Фрунзенская. Онлайн-запись, бесплатная парковка.",
   openGraph: {
     type: "website",
     locale: "ru_RU",
-    siteName: "Avgust Brow Bar",
+    siteName: "Август",
   },
 };
 
 const businessJsonLd = {
   "@context": "https://schema.org",
   "@type": "BeautySalon",
-  name: "Avgust Brow Bar",
-  description:
-    "Профессиональное оформление бровей и ламинирование ресниц в Хамовниках",
+  name: "Август",
+  description: "Студия бровей и ресниц в Хамовниках, Москва",
   url: "https://avgustbrows.ru",
-  telephone: "+7 (995) 895-75-80",
+  telephone: "+7 (999) 563-76-12",
   email: "shubletovabrows@yandex.ru",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Фрунзенская набережная 30с5",
     addressLocality: "Москва",
     addressRegion: "Москва",
     addressCountry: "RU",
@@ -52,6 +55,7 @@ const businessJsonLd = {
     latitude: 55.7282,
     longitude: 37.578,
   },
+  openingHours: "Mo-Su 12:00-21:00",
   priceRange: "₽₽",
 };
 
@@ -61,7 +65,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="ru" className={`${cormorant.variable} ${nunito.variable}`}>
       <head>
         <script
           type="application/ld+json"
@@ -88,9 +92,9 @@ export default function RootLayout({
           </>
         )}
       </head>
-      <body className="font-body bg-bg-main text-text-main min-h-screen flex flex-col">
+      <body className="font-body bg-cream text-ink-soft min-h-screen flex flex-col">
         <Header />
-        <main className="flex-1 pt-16 lg:pt-20">{children}</main>
+        <main className="flex-1 pt-16">{children}</main>
         <Footer />
         <MobileBookingButton />
       </body>

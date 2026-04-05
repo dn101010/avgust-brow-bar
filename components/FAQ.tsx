@@ -7,27 +7,27 @@ function FaqRow({ item }: { item: FaqItem }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <div className="border-b border-border">
+    <div className="border-b border-petal">
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between py-5 text-left"
         aria-expanded={open}
       >
-        <span className="font-medium text-primary pr-4">{item.question}</span>
+        <span className="font-display text-[18px] font-normal text-ink pr-4">{item.question}</span>
         <svg
-          width="20"
-          height="20"
+          width="18"
+          height="18"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          className={`shrink-0 text-accent transition-transform ${open ? "rotate-180" : ""}`}
+          stroke="#C5A47E"
+          strokeWidth="1.5"
+          className={`shrink-0 transition-transform ${open ? "rotate-180" : ""}`}
         >
           <path d="M6 9l6 6 6-6" />
         </svg>
       </button>
       {open && (
-        <div className="pb-5 text-text-muted text-sm leading-relaxed">
+        <div className="pb-5 font-body text-[14px] font-light text-stone leading-relaxed">
           {item.answer}
         </div>
       )}
@@ -37,7 +37,7 @@ function FaqRow({ item }: { item: FaqItem }) {
 
 export default function FAQ({ items }: { items: FaqItem[] }) {
   return (
-    <div className="divide-y-0">
+    <div>
       {items.map((item, i) => (
         <FaqRow key={i} item={item} />
       ))}

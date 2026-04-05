@@ -5,9 +5,9 @@ import FadeIn from "@/components/FadeIn";
 import { brand, contacts } from "@/data/contacts";
 
 export const metadata: Metadata = {
-  title: "О мастере Татьяне | Эксперт по бровям | Avgust Brow Bar",
+  title: "О мастерах — Август, Хамовники",
   description:
-    "Татьяна — бровист с опытом 4000+ работ, призёр международного чемпионата. Знание химии и колористики.",
+    "Татьяна Шублетова: 5000+ бровей, 5 лет опыта. Мария: наращивание ресниц в натуральных техниках.",
 };
 
 export default function AboutPage() {
@@ -29,90 +29,97 @@ export default function AboutPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Breadcrumbs items={[{ label: "О мастере" }]} />
+      <div className="max-w-[1020px] mx-auto px-6">
+        <Breadcrumbs items={[{ label: "О мастерах" }]} />
       </div>
 
-      <section className="py-16 lg:py-24">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn>
-            <h1 className="font-heading text-4xl sm:text-5xl font-bold text-primary">
-              {brand.owner}
-            </h1>
-            <p className="mt-2 text-accent text-lg font-medium">
-              Основатель Avgust Brow Bar
-            </p>
-          </FadeIn>
-
-          <FadeIn>
-            <div className="mt-10 space-y-6 text-text-main text-lg leading-relaxed">
-              <p>
-                Я — Татьяна, бровист с опытом более 4000 оформленных бровей.
-                Моя специализация — натуральный результат, который подчёркивает
-                вашу индивидуальность, а не маскирует её.
-              </p>
-              <p>
-                За плечами — более 10 повышений у топовых мастеров рынка: Kris Black,
-                Евгения Устюгова, Анастасия Тихонова. Я — призёр международного
-                чемпионата по оформлению бровей.
-              </p>
-              <p>
-                Моё образование включает глубокое знание химии и колористики —
-                я понимаю, как работают составы и красители на молекулярном уровне.
-                Это позволяет подбирать идеальные решения для каждого клиента.
-              </p>
-              <p>
-                В студии Avgust я создала пространство, где каждая деталь продумана
-                для вашего комфорта: от ортопедической кушетки до зернового кофе.
-              </p>
-            </div>
-          </FadeIn>
-
-          <FadeIn>
-            <div className="mt-12">
-              <h2 className="font-heading text-2xl font-bold text-primary mb-6">
-                Достижения и квалификация
-              </h2>
-              <ul className="space-y-4">
+      <section className="py-16 lg:py-22 px-6">
+        <div className="max-w-[1020px] mx-auto">
+          {/* Татьяна */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <FadeIn>
+              <div className="relative">
+                <div className="aspect-[4/5] rounded-lg bg-gradient-to-br from-linen to-petal flex items-center justify-center">
+                  <span className="font-body text-[13px] text-stone">Фото Татьяны</span>
+                </div>
+                <div className="absolute -inset-[10px] border border-bloom/40 rounded-[14px] pointer-events-none" />
+              </div>
+            </FadeIn>
+            <FadeIn>
+              <p className="eyebrow mb-4">Основатель студии</p>
+              <h1 className="font-display text-[34px] font-light text-ink leading-[1.20]">
+                {brand.owner}
+              </h1>
+              <div className="mt-6 space-y-4 font-body text-[15px] font-light text-ink-soft leading-[1.65]">
+                <p>
+                  Основатель студии Август. Моя специализация — натуральный результат,
+                  который подчёркивает вашу индивидуальность, а не маскирует её.
+                </p>
+                <p>
+                  За 5 лет в индустрии я прошла более 10 повышений квалификации у топовых мастеров.
+                  Глубокое знание химии составов, колористики и анатомии позволяет подбирать
+                  идеальные решения для каждого клиента.
+                </p>
+                <p>
+                  Помимо работы с клиентами, я обучаю мастеров по авторской методике «Бьюти формула»
+                  уже более 3 лет.
+                </p>
+              </div>
+              <ul className="mt-6 space-y-3">
                 {brand.credentials.map((cred, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <svg
-                      width="20"
-                      height="20"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#C5A47E"
-                      strokeWidth="2"
-                      className="shrink-0 mt-0.5"
-                    >
-                      <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
-                    <span className="text-text-main">{cred}</span>
+                    <span className="mt-1 w-5 h-5 rounded-full bg-gold-light flex items-center justify-center shrink-0">
+                      <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#C5A47E" strokeWidth="3">
+                        <path d="M5 12l5 5L20 7" />
+                      </svg>
+                    </span>
+                    <span className="font-body text-[14px] font-light text-ink-soft">{cred}</span>
                   </li>
                 ))}
               </ul>
-            </div>
-          </FadeIn>
+              <a
+                href={contacts.yclients}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-block font-body text-[14px] font-medium tracking-[0.4px] bg-gold hover:bg-gold-hover text-white rounded-sm px-8 py-[13px] hover:shadow-gold-glow hover:-translate-y-px transition-all"
+              >
+                Записаться к Татьяне
+              </a>
+            </FadeIn>
+          </div>
 
-          <FadeIn>
-            <div className="mt-12">
-              <h2 className="font-heading text-2xl font-bold text-primary mb-4">
-                Обучение
+          {/* Мария */}
+          <div className="mt-24 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <FadeIn>
+              <div className="md:order-2 relative">
+                <div className="aspect-[4/5] rounded-lg bg-gradient-to-br from-linen to-petal flex items-center justify-center">
+                  <span className="font-body text-[13px] text-stone">Фото Марии</span>
+                </div>
+                <div className="absolute -inset-[10px] border border-bloom/40 rounded-[14px] pointer-events-none" />
+              </div>
+            </FadeIn>
+            <FadeIn>
+              <p className="eyebrow mb-4">Мастер по ресницам</p>
+              <h2 className="font-display text-[34px] font-light text-ink leading-[1.20]">
+                Мария
               </h2>
-              <p className="text-text-main text-lg leading-relaxed">
-                Помимо работы с клиентами, я обучаю начинающих мастеров.
-                Подробнее о курсах —{" "}
-                <a
-                  href={contacts.coursesUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-accent hover:text-accent-hover underline transition-colors"
-                >
-                  shubletovabrows.ru
-                </a>
-              </p>
-            </div>
-          </FadeIn>
+              <div className="mt-6 space-y-4 font-body text-[15px] font-light text-ink-soft leading-[1.65]">
+                <p>
+                  Мастер по наращиванию ресниц в студии Август. Натуральные техники до 2D —
+                  лисий эффект, стрелка, эффект лами. Каждая работа выглядит естественно
+                  и подчёркивает ваш взгляд.
+                </p>
+              </div>
+              <a
+                href={contacts.yclients}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-8 inline-block font-body text-[14px] font-medium tracking-[0.4px] bg-gold hover:bg-gold-hover text-white rounded-sm px-8 py-[13px] hover:shadow-gold-glow hover:-translate-y-px transition-all"
+              >
+                Записаться к Марии
+              </a>
+            </FadeIn>
+          </div>
         </div>
       </section>
 

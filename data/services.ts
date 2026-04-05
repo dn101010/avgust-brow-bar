@@ -2,11 +2,11 @@ export interface Service {
   id: string;
   slug: string;
   name: string;
-  short: string;
+  master: string;
   duration: string;
-  priceFrom: string;
+  price: string;
   description: string;
-  image: string;
+  image?: string;
 }
 
 export const services: Service[] = [
@@ -14,67 +14,97 @@ export const services: Service[] = [
     id: "dolgovremennaya-ukladka",
     slug: "dolgovremennaya-ukladka",
     name: "Долговременная укладка бровей",
-    short: "Мягкие составы, 3-ступенчатый уход",
-    duration: "60 мин",
-    priceFrom: "по запросу",
+    master: "Татьяна",
+    duration: "70 мин",
+    price: "3 900 ₽",
+    description: "Мягкие составы, 3-ступенчатый уход, эффект 4-6 недель",
     image: "/images/dolgovremennaya-ukladka.jpg",
-    description:
-      "Выполняется на мягких составах с трёхступенчатым уходом. Эффект сохраняется 4-6 недель. Подходит для непослушных бровей, создаёт эффект «причёсанных» волосков.",
   },
   {
     id: "arhitektura-brovej",
     slug: "arhitektura-brovej",
     name: "Архитектура бровей",
-    short: "Гармоничная форма с окрашиванием",
+    master: "Татьяна",
     duration: "45-60 мин",
-    priceFrom: "по запросу",
+    price: "2 900 ₽",
+    description: "Создание гармоничной формы с окрашиванием под тип лица",
     image: "/images/arhitektura-brovej.jpg",
-    description:
-      "Создание гармоничной формы бровей под тип лица с окрашиванием. Индивидуальный подбор с учётом ваших пожеланий и особенностей.",
   },
   {
     id: "okrashivanie-brovej",
     slug: "okrashivanie-brovej",
-    name: "Окрашивание бровей",
-    short: "Графика, натуральные, тонирование, цветные",
+    name: "Окрашивание бровей краской",
+    master: "Татьяна",
     duration: "30-45 мин",
-    priceFrom: "по запросу",
+    price: "1 800 ₽",
+    description: "Графика, натуральное, тонирование, цветное",
     image: "/images/okrashivanie-brovej.jpg",
-    description:
-      "Все виды окрашивания: графика, натуральное, тонирование, цветное. Краска — эффект теней, хна — эффект карандаша. Мастер подберёт оптимальный вариант под ваш цветотип и запрос.",
   },
   {
     id: "laminirovanie-resnic",
     slug: "laminirovanie-resnic",
     name: "Ламинирование ресниц",
-    short: "С окрашиванием и 3-ступенчатым уходом",
+    master: "Татьяна",
     duration: "60-75 мин",
-    priceFrom: "по запросу",
+    price: "4 200 ₽",
+    description: "С окрашиванием и 3-ступенчатым уходом, эффект 6-8 недель",
     image: "/images/laminirovanie-resnic.jpg",
-    description:
-      "Ламинирование ресниц с окрашиванием и тройным уходом. Процедура проходит на ортопедической кушетке с поддержкой поясницы и колен. Эффект — выразительный изгиб на 6-8 недель.",
   },
   {
     id: "muzhskoe-oformlenie",
     slug: "muzhskoe-oformlenie",
     name: "Мужское оформление бровей",
-    short: "Аккуратная коррекция без лишнего",
+    master: "Татьяна",
     duration: "20-30 мин",
-    priceFrom: "по запросу",
+    price: "2 900 ₽",
+    description: "Аккуратная коррекция, ухоженный образ",
     image: "/images/muzhskoe-oformlenie.jpg",
-    description:
-      "Правильная коррекция для создания ухоженного мужского образа. Быстро, аккуратно, без лишнего. Подчёркивает мужественные черты лица.",
   },
   {
     id: "osvetlenie-brovej",
     slug: "osvetlenie-brovej",
     name: "Осветление бровей",
-    short: "Химическое и механическое",
-    duration: "30-45 мин",
-    priceFrom: "по запросу",
+    master: "Татьяна",
+    duration: "45-90 мин",
+    price: "4 200–4 700 ₽",
+    description: "Химическое и механическое, безопасные составы",
     image: "/images/osvetlenie-brovej.jpg",
-    description:
-      "Химическое и механическое осветление бровей. Безопасные составы, индивидуальный подход к каждому клиенту.",
+  },
+  {
+    id: "combo-brovi-lami",
+    slug: "combo-brovi-lami",
+    name: "Комбо: брови + ламинирование ресниц",
+    master: "Татьяна",
+    duration: "~120 мин",
+    price: "7 500 ₽",
+    description: "Комплекс + удаление пушка над губой бонусом",
+  },
+  {
+    id: "narashhivanie-resnic",
+    slug: "narashhivanie-resnic",
+    name: "Наращивание ресниц",
+    master: "Мария",
+    duration: "~120 мин",
+    price: "3 000 ₽",
+    description: "Любой эффект и изгиб, натуральные техники до 2D. Эффекты: лисий, стрелка, эффект лами",
+  },
+  {
+    id: "korrekciya-narashhivaniya",
+    slug: "korrekciya-narashhivaniya",
+    name: "Коррекция наращивания (наше)",
+    master: "Мария",
+    duration: "60-90 мин",
+    price: "2 000 ₽",
+    description: "Коррекция в течение месяца после наращивания",
+  },
+  {
+    id: "snyatie-narashhivaniya",
+    slug: "snyatie-narashhivaniya",
+    name: "Снятие чужого наращивания",
+    master: "Мария",
+    duration: "30-45 мин",
+    price: "500 ₽",
+    description: "Безопасное снятие",
   },
 ];
 

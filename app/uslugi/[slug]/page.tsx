@@ -3,10 +3,8 @@ import Image from "next/image";
 import { notFound } from "next/navigation";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CTABanner from "@/components/CTABanner";
-import FAQ from "@/components/FAQ";
 import FadeIn from "@/components/FadeIn";
 import { services, getServiceBySlug } from "@/data/services";
-import { faqGeneral } from "@/data/faq";
 import { contacts } from "@/data/contacts";
 
 interface Props {
@@ -21,8 +19,8 @@ export function generateMetadata({ params }: Props): Metadata {
   const service = getServiceBySlug(params.slug);
   if (!service) return {};
   return {
-    title: `${service.name} в Москве | Avgust Brow Bar`,
-    description: `${service.short}. Запись в студию Avgust, Хамовники, 5 мин от м. Фрунзенская.`,
+    title: `${service.name} — ${service.price}`,
+    description: `${service.description}. Запись в студию Август, Хамовники, 5 мин от м. Фрунзенская.`,
   };
 }
 
@@ -37,7 +35,12 @@ export default function ServicePage({ params }: Props) {
     description: service.description,
     provider: {
       "@type": "BeautySalon",
-      name: "Avgust Brow Bar",
+      name: "Август",
+    },
+    offers: {
+      "@type": "Offer",
+      price: service.price.replace(/[^\d]/g, ""),
+      priceCurrency: "RUB",
     },
   };
 
@@ -48,7 +51,7 @@ export default function ServicePage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-[1020px] mx-auto px-6">
         <Breadcrumbs
           items={[
             { label: "Услуги", href: "/uslugi" },
@@ -57,29 +60,42 @@ export default function ServicePage({ params }: Props) {
         />
       </div>
 
-      <section className="py-16 lg:py-24">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-16 lg:py-22 px-6">
+        <div className="max-w-[640px] mx-auto">
+          {service.image && (
+            <FadeIn>
+              <div className="relative aspect-[16/9] rounded-md overflow-hidden mb-10">
+                <Image
+                  src={service.image}
+                  alt={service.name}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 640px"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            </FadeIn>
+          )}
+
           <FadeIn>
-            <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-10">
-              <Image
-                src={service.image}
-                alt={service.name}
-                fill
-                sizes="(max-width: 768px) 100vw, 768px"
-                className="object-cover"
-                priority
-              />
-            </div>
-            <h1 className="font-heading text-4xl sm:text-5xl font-bold text-primary">
+            <p className="eyebrow mb-4">
+              Мастер {service.master}
+            </p>
+            <h1
+              className="heading-section"
+              style={{ fontSize: "clamp(28px, 3.5vw, 40px)" }}
+            >
               {service.name}
             </h1>
-            <div className="mt-6 flex items-center gap-6 text-text-muted">
-              <span>{service.duration}</span>
-              <span className="text-accent font-semibold text-lg">
-                {service.priceFrom}
+            <div className="mt-6 flex items-center gap-6">
+              <span className="font-body text-[13px] font-normal text-stone tracking-[0.3px]">
+                {service.duration}
+              </span>
+              <span className="font-display text-[24px] font-light text-gold-hover">
+                {service.price}
               </span>
             </div>
-            <p className="mt-8 text-text-main text-lg leading-relaxed">
+            <p className="mt-8 font-body text-[16px] font-light text-ink-soft leading-[1.65]">
               {service.description}
             </p>
           </FadeIn>
@@ -90,19 +106,10 @@ export default function ServicePage({ params }: Props) {
                 href={contacts.yclients}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block bg-accent hover:bg-accent-hover text-white px-8 py-4 rounded-lg text-lg font-medium transition-colors"
+                className="inline-block font-body text-[14px] font-medium tracking-[0.4px] bg-gold hover:bg-gold-hover text-white rounded-sm px-8 py-[13px] hover:shadow-gold-glow hover:-translate-y-px transition-all"
               >
-                Записаться на {service.name.toLowerCase()}
+                Записаться к {service.master === "Татьяна" ? "Татьяне" : "Марии"}
               </a>
-            </div>
-          </FadeIn>
-
-          <FadeIn>
-            <div className="mt-20">
-              <h2 className="font-heading text-2xl font-bold text-primary mb-8">
-                Частые вопросы
-              </h2>
-              <FAQ items={faqGeneral.slice(0, 4)} />
             </div>
           </FadeIn>
         </div>
