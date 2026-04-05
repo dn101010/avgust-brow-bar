@@ -14,15 +14,15 @@ export const metadata: Metadata = {
 };
 
 const homeServices = [
-  { icon: "✦", slug: "dolgovremennaya-ukladka", name: "Долговременная укладка", description: "Мягкие составы с трёхступенчатым уходом. Эффект «причёсанных» бровей 4-6 недель.", duration: "70 мин" },
-  { icon: "◇", slug: "arhitektura-brovej", name: "Архитектура бровей", description: "Гармоничная форма под тип лица с окрашиванием. Индивидуальный подбор.", duration: "45-60 мин" },
-  { icon: "◐", slug: "okrashivanie-brovej", name: "Окрашивание бровей", description: "Хна, краска, графика, тонирование. Подберу под цветотип и запрос.", duration: "30-45 мин" },
-  { icon: "◡", slug: "laminirovanie-resnic", name: "Ламинирование ресниц", description: "Эффект подкрученных ресниц без наращивания. Натуральность 6-8 недель.", duration: "60-75 мин" },
-  { icon: "■", slug: "muzhskoe-oformlenie", name: "Мужское оформление", description: "Аккуратно убираю лишнее, сохраняя мужественность. Без нарисованных бровей.", duration: "20-30 мин" },
-  { icon: "☼", slug: "osvetlenie-brovej", name: "Осветление бровей", description: "Для тех, кто хочет смягчить темные брови. Знание колористики.", duration: "45-90 мин" },
-  { icon: "✶", slug: "combo-brovi-lami", name: "Комбо: брови + ресницы", description: "Комплекс + удаление пушка над губой бонусом.", duration: "~120 мин" },
-  { icon: "❂", slug: "narashhivanie-resnic", name: "Наращивание ресниц", description: "Мастер Мария. Любой эффект и изгиб, натуральные техники до 2D.", duration: "~120 мин" },
-  { icon: "✔", slug: "korrekciya-narashhivaniya", name: "Коррекция наращивания", description: "Коррекция нашего наращивания в течение месяца.", duration: "60-90 мин" },
+  { slug: "dolgovremennaya-ukladka", name: "Долговременная укладка", description: "Мягкие составы с трёхступенчатым уходом. Эффект «причёсанных» бровей 4-6 недель.", duration: "70 мин" },
+  { slug: "arhitektura-brovej", name: "Архитектура бровей", description: "Гармоничная форма под тип лица с окрашиванием. Индивидуальный подбор.", duration: "45-60 мин" },
+  { slug: "okrashivanie-brovej", name: "Окрашивание бровей", description: "Хна, краска, графика, тонирование. Подберу под цветотип и запрос.", duration: "30-45 мин" },
+  { slug: "laminirovanie-resnic", name: "Ламинирование ресниц", description: "Эффект подкрученных ресниц без наращивания. Натуральность 6-8 недель.", duration: "60-75 мин" },
+  { slug: "muzhskoe-oformlenie", name: "Мужское оформление", description: "Аккуратно убираю лишнее, сохраняя мужественность. Без нарисованных бровей.", duration: "20-30 мин" },
+  { slug: "osvetlenie-brovej", name: "Осветление бровей", description: "Для тех, кто хочет смягчить темные брови. Знание колористики.", duration: "45-90 мин" },
+  { slug: "combo-brovi-lami", name: "Комбо: брови + ресницы", description: "Комплекс + удаление пушка над губой бонусом.", duration: "~120 мин" },
+  { slug: "narashhivanie-resnic", name: "Наращивание ресниц", description: "Мастер Мария. Любой эффект и изгиб, натуральные техники до 2D.", duration: "~120 мин" },
+  { slug: "korrekciya-narashhivaniya", name: "Коррекция наращивания", description: "Коррекция нашего наращивания в течение месяца.", duration: "60-90 мин" },
 ];
 
 export default function HomePage() {

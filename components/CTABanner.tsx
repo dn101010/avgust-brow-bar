@@ -30,7 +30,7 @@ export default function CTABanner() {
             м. Фрунзенская, 5 мин
           </span>
           <span className="text-[13px] text-[rgba(255,255,255,0.35)]">
-            ☎ {contacts.phonePrimary}
+            {contacts.phonePrimary}
           </span>
         </div>
       </div>

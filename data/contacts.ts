@@ -46,10 +46,10 @@ export const trustItems = [
 ] as const;
 
 export const atmosphere = [
-  { icon: "\u2615", title: "Авторский кофе", description: "Зерновой кофе и сезонные напитки", image: "/images/atmosphere/kofe.jpg" },
-  { icon: "\u2605", title: "Правильные сладости", description: "Ягоды, шоколад, угощения на выбор", image: "/images/atmosphere/sladosti.jpg" },
-  { icon: "\u2609", title: "Ортопедическая кушетка", description: "Поддержка поясницы и колен", image: "/images/atmosphere/kushetka.jpg" },
-  { icon: "\u266A", title: "Ваш темп", description: "Открыта для разговора, уважаю тишину", image: "/images/atmosphere/studio.jpg" },
+  { title: "Ваш темп", description: "Открыта для разговора, уважаю тишину", image: "/images/atmosphere/studio.jpg" },
+  { title: "Авторский кофе", description: "Зерновой кофе и сезонные напитки", image: "/images/atmosphere/kofe.jpg" },
+  { title: "Правильные сладости", description: "Ягоды, шоколад, угощения на выбор", image: "/images/atmosphere/sladosti.jpg" },
+  { title: "Ортопедическая кушетка", description: "Поддержка поясницы и колен", image: "/images/atmosphere/kushetka.jpg" },
 ] as const;
 
 export const domain =

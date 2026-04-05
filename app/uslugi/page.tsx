@@ -12,19 +12,6 @@ export const metadata: Metadata = {
     "Все услуги: укладка, архитектура, окрашивание, ламинирование, наращивание ресниц, мужское оформление. Хамовники.",
 };
 
-const icons: Record<string, string> = {
-  "dolgovremennaya-ukladka": "✦",
-  "arhitektura-brovej": "◇",
-  "okrashivanie-brovej": "◐",
-  "laminirovanie-resnic": "◡",
-  "muzhskoe-oformlenie": "■",
-  "osvetlenie-brovej": "☼",
-  "combo-brovi-lami": "✶",
-  "narashhivanie-resnic": "❂",
-  "korrekciya-narashhivaniya": "✔",
-  "snyatie-narashhivaniya": "✕",
-};
-
 export default function UslugiPage() {
   return (
     <>
@@ -48,7 +35,6 @@ export default function UslugiPage() {
           {services.map((s) => (
             <FadeIn key={s.id}>
               <ServiceCard
-                icon={icons[s.slug] || "●"}
                 slug={s.slug}
                 name={s.name}
                 description={s.description}
