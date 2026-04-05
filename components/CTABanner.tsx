@@ -27,7 +27,7 @@ export default function CTABanner() {
         </a>
         <div className="flex justify-center gap-7 mt-7 flex-wrap">
           <span className="text-[13px] text-[rgba(255,255,255,0.35)]">
-            ⚊ м. Фрунзенская, 5 мин
+            м. Фрунзенская, 5 мин
           </span>
           <span className="text-[13px] text-[rgba(255,255,255,0.35)]">
             ☎ {contacts.phonePrimary}

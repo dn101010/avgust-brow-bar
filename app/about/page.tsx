@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import CTABanner from "@/components/CTABanner";
 import FadeIn from "@/components/FadeIn";
+import OptionalImage from "@/components/OptionalImage";
 import { brand, contacts } from "@/data/contacts";
 
 export const metadata: Metadata = {
@@ -48,9 +49,13 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <FadeIn>
               <div className="relative">
-                <div className="aspect-[4/5] rounded-lg bg-gradient-to-br from-linen to-petal flex items-center justify-center">
-                  <span className="font-body text-[13px] text-stone">Фото Татьяны</span>
-                </div>
+                <OptionalImage
+                  src="/images/team/tatyana.jpg"
+                  alt="Татьяна Шублетова"
+                  aspectRatio="4/5"
+                  radius="8px"
+                  placeholderText="Фото Татьяны"
+                />
                 <div className="absolute -inset-[10px] border border-bloom/40 rounded-[14px] pointer-events-none" />
               </div>
             </FadeIn>
@@ -101,9 +106,13 @@ export default function AboutPage() {
           <div className="mt-24 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <FadeIn>
               <div className="md:order-2 relative">
-                <div className="aspect-[4/5] rounded-lg bg-gradient-to-br from-linen to-petal flex items-center justify-center">
-                  <span className="font-body text-[13px] text-stone">Фото Марии</span>
-                </div>
+                <OptionalImage
+                  src="/images/team/mariya.jpg"
+                  alt="Мария"
+                  aspectRatio="4/5"
+                  radius="8px"
+                  placeholderText="Фото Марии"
+                />
                 <div className="absolute -inset-[10px] border border-bloom/40 rounded-[14px] pointer-events-none" />
               </div>
             </FadeIn>

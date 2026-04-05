@@ -4,6 +4,7 @@ import TrustBar from "@/components/TrustBar";
 import ServiceCard from "@/components/ServiceCard";
 import CTABanner from "@/components/CTABanner";
 import FadeIn from "@/components/FadeIn";
+import OptionalImage from "@/components/OptionalImage";
 import { brand, atmosphere, contacts } from "@/data/contacts";
 
 export const metadata: Metadata = {
@@ -72,10 +73,19 @@ export default function HomePage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-[1020px] mx-auto relative">
           {atmosphere.map((item, i) => (
             <FadeIn key={i}>
-              <div className="p-5 border border-[rgba(197,164,126,0.12)] rounded-lg bg-[rgba(255,255,255,0.02)] hover:bg-[rgba(197,164,126,0.05)] hover:border-[rgba(197,164,126,0.25)] transition-all duration-[350ms]">
-                <span className="text-[24px] block mb-[14px]">{item.icon}</span>
-                <h3 className="font-display text-[17px] font-normal text-white mb-[6px]">{item.title}</h3>
-                <p className="text-[13px] font-light leading-[1.5] text-[rgba(255,255,255,0.4)]">{item.description}</p>
+              <div className="border border-[rgba(197,164,126,0.12)] rounded-lg bg-[rgba(255,255,255,0.02)] hover:bg-[rgba(197,164,126,0.05)] hover:border-[rgba(197,164,126,0.25)] transition-all duration-[350ms] overflow-hidden">
+                <OptionalImage
+                  src={item.image}
+                  alt={item.title}
+                  aspectRatio="4/3"
+                  radius="0"
+                  placeholderText="Фото скоро"
+                  dark
+                />
+                <div className="p-5">
+                  <h3 className="font-display text-[17px] font-normal text-white mb-[6px]">{item.title}</h3>
+                  <p className="text-[13px] font-light leading-[1.5] text-[rgba(255,255,255,0.4)]">{item.description}</p>
+                </div>
               </div>
             </FadeIn>
           ))}
@@ -87,8 +97,14 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-[1020px] mx-auto items-center">
           <FadeIn>
             <div className="relative">
-              <div className="w-full aspect-[4/5] bg-gradient-to-br from-linen to-petal rounded-xl flex items-center justify-center">
-                <span className="font-display text-[14px] text-stone italic opacity-50">Фото Татьяны за работой</span>
+              <div className="w-full aspect-[4/5] rounded-xl overflow-hidden">
+                <OptionalImage
+                  src="/images/team/tatyana.jpg"
+                  alt="Татьяна Шублетова — бровист-эксперт"
+                  aspectRatio="4/5"
+                  radius="12px"
+                  placeholderText="Фото Татьяны"
+                />
               </div>
               <div className="absolute -inset-[10px] border border-bloom/40 rounded-[14px] pointer-events-none" />
             </div>
@@ -117,6 +133,43 @@ export default function HomePage() {
                 className="inline-block text-[14px] font-medium py-[13px] px-8 bg-gold text-white rounded-sm hover:bg-gold-hover hover:shadow-gold-glow transition-all"
               >
                 Записаться к Татьяне
+              </a>
+            </div>
+          </FadeIn>
+        </div>
+
+        {/* Мария — зеркальный layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16 max-w-[1020px] mx-auto items-center mt-16">
+          <FadeIn>
+            <div className="md:order-2 relative">
+              <div className="w-full aspect-[4/5] rounded-xl overflow-hidden">
+                <OptionalImage
+                  src="/images/team/mariya.jpg"
+                  alt="Мария — мастер по наращиванию ресниц"
+                  aspectRatio="4/5"
+                  radius="12px"
+                  placeholderText="Фото Марии"
+                />
+              </div>
+              <div className="absolute -inset-[10px] border border-bloom/40 rounded-[14px] pointer-events-none" />
+            </div>
+          </FadeIn>
+          <FadeIn>
+            <div className="md:order-1">
+              <p className="eyebrow mb-[14px]">Мастер</p>
+              <h2 className="font-display text-[34px] font-light leading-[1.2] text-ink mb-5">
+                Мария
+              </h2>
+              <p className="text-[15px] font-light leading-[1.7] text-[#4A4440] mb-7">
+                Мастер по наращиванию ресниц. Работаю только в натуральных техниках до 2D. Эффекты: лисий, стрелка, эффект лами.
+              </p>
+              <a
+                href={contacts.yclients}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block text-[14px] font-medium py-[13px] px-8 bg-gold text-white rounded-sm hover:bg-gold-hover hover:shadow-gold-glow transition-all"
+              >
+                Записаться к Марии
               </a>
             </div>
           </FadeIn>

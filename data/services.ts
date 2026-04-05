@@ -7,6 +7,7 @@ export interface Service {
   price: string;
   description: string;
   image?: string;
+  aftercare?: string;
 }
 
 export const services: Service[] = [
@@ -19,6 +20,7 @@ export const services: Service[] = [
     price: "3 900 ₽",
     description: "Мягкие составы, 3-ступенчатый уход, эффект 4-6 недель",
     image: "/images/dolgovremennaya-ukladka.jpg",
+    aftercare: "Не мочить 24 часа. Не посещать баню/сауну 48 часов. Не наносить масла 24 часа. Расчёсывать щёточкой ежедневно. Эффект сохраняется 4-6 недель.",
   },
   {
     id: "arhitektura-brovej",
@@ -29,6 +31,7 @@ export const services: Service[] = [
     price: "2 900 ₽",
     description: "Создание гармоничной формы с окрашиванием под тип лица",
     image: "/images/arhitektura-brovej.jpg",
+    aftercare: "Не мочить 12 часов при окрашивании хной. Избегать пилингов в зоне бровей. Наносить масло перед умыванием для сохранения цвета.",
   },
   {
     id: "okrashivanie-brovej",
@@ -39,6 +42,7 @@ export const services: Service[] = [
     price: "1 800 ₽",
     description: "Графика, натуральное, тонирование, цветное",
     image: "/images/okrashivanie-brovej.jpg",
+    aftercare: "Можно мочить через 2 часа. Избегать агрессивных очищающих средств. На коже цвет держится до 5 дней, на волосках — до 3 недель.",
   },
   {
     id: "laminirovanie-resnic",
@@ -49,6 +53,7 @@ export const services: Service[] = [
     price: "4 200 ₽",
     description: "С окрашиванием и 3-ступенчатым уходом, эффект 6-8 недель",
     image: "/images/laminirovanie-resnic.jpg",
+    aftercare: "Не мочить 24 часа. Не тереть глаза. Не использовать водостойкую тушь 1 неделю. Не посещать баню/сауну 48 часов. Эффект сохраняется 6-8 недель.",
   },
   {
     id: "muzhskoe-oformlenie",
