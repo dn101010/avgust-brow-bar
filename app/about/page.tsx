@@ -33,8 +33,17 @@ export default function AboutPage() {
         <Breadcrumbs items={[{ label: "О мастерах" }]} />
       </div>
 
-      <section className="py-16 lg:py-22 px-6">
+      <section className="py-[88px] px-6">
         <div className="max-w-[1020px] mx-auto">
+          <div className="text-center max-w-[520px] mx-auto mb-14">
+            <FadeIn>
+              <p className="eyebrow mb-[14px]">О мастерах</p>
+              <h1 className="heading-section mb-[14px]" style={{ fontSize: "clamp(28px, 3.5vw, 40px)" }}>
+                Наша команда
+              </h1>
+            </FadeIn>
+          </div>
+
           {/* Татьяна */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <FadeIn>
@@ -47,9 +56,9 @@ export default function AboutPage() {
             </FadeIn>
             <FadeIn>
               <p className="eyebrow mb-4">Основатель студии</p>
-              <h1 className="font-display text-[34px] font-light text-ink leading-[1.20]">
+              <h2 className="font-display text-[34px] font-light text-ink leading-[1.20]">
                 {brand.owner}
-              </h1>
+              </h2>
               <div className="mt-6 space-y-4 font-body text-[15px] font-light text-ink-soft leading-[1.65]">
                 <p>
                   Основатель студии Август. Моя специализация — натуральный результат,

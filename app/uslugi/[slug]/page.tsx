@@ -33,10 +33,7 @@ export default function ServicePage({ params }: Props) {
     "@type": "Service",
     name: service.name,
     description: service.description,
-    provider: {
-      "@type": "BeautySalon",
-      name: "Август",
-    },
+    provider: { "@type": "BeautySalon", name: "Август" },
     offers: {
       "@type": "Offer",
       price: service.price.replace(/[^\d]/g, ""),
@@ -60,11 +57,11 @@ export default function ServicePage({ params }: Props) {
         />
       </div>
 
-      <section className="py-16 lg:py-22 px-6">
+      <section className="py-[88px] px-6">
         <div className="max-w-[640px] mx-auto">
           {service.image && (
             <FadeIn>
-              <div className="relative aspect-[16/9] rounded-md overflow-hidden mb-10">
+              <div className="relative aspect-[16/9] rounded-lg overflow-hidden mb-10">
                 <Image
                   src={service.image}
                   alt={service.name}
@@ -78,24 +75,15 @@ export default function ServicePage({ params }: Props) {
           )}
 
           <FadeIn>
-            <p className="eyebrow mb-4">
-              Мастер {service.master}
-            </p>
-            <h1
-              className="heading-section"
-              style={{ fontSize: "clamp(28px, 3.5vw, 40px)" }}
-            >
+            <p className="eyebrow mb-[14px]">Мастер {service.master}</p>
+            <h1 className="heading-section mb-[14px]" style={{ fontSize: "clamp(28px, 3.5vw, 40px)" }}>
               {service.name}
             </h1>
-            <div className="mt-6 flex items-center gap-6">
-              <span className="font-body text-[13px] font-normal text-stone tracking-[0.3px]">
-                {service.duration}
-              </span>
-              <span className="font-display text-[24px] font-light text-gold-hover">
-                {service.price}
-              </span>
+            <div className="flex items-center gap-6 mb-8">
+              <span className="text-[13px] font-normal text-stone">{service.duration}</span>
+              <span className="font-display text-[24px] font-light text-gold-hover">{service.price}</span>
             </div>
-            <p className="mt-8 font-body text-[16px] font-light text-ink-soft leading-[1.65]">
+            <p className="text-[15px] font-light text-[#4A4440] leading-[1.7]">
               {service.description}
             </p>
           </FadeIn>
@@ -106,7 +94,7 @@ export default function ServicePage({ params }: Props) {
                 href={contacts.yclients}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block font-body text-[14px] font-medium tracking-[0.4px] bg-gold hover:bg-gold-hover text-white rounded-sm px-8 py-[13px] hover:shadow-gold-glow hover:-translate-y-px transition-all"
+                className="inline-block text-[14px] font-medium py-[13px] px-8 bg-gold text-white rounded-sm hover:bg-gold-hover hover:shadow-gold-glow transition-all"
               >
                 Записаться к {service.master === "Татьяна" ? "Татьяне" : "Марии"}
               </a>

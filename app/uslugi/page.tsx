@@ -11,53 +11,50 @@ export const metadata: Metadata = {
     "Все услуги: укладка, архитектура, окрашивание, ламинирование, наращивание ресниц, мужское оформление. Хамовники.",
 };
 
-export default function UslugiPage() {
-  const tatyana = services.filter((s) => s.master === "Татьяна");
-  const maria = services.filter((s) => s.master === "Мария");
+const icons: Record<string, string> = {
+  "dolgovremennaya-ukladka": "✦",
+  "arhitektura-brovej": "◇",
+  "okrashivanie-brovej": "◐",
+  "laminirovanie-resnic": "◡",
+  "muzhskoe-oformlenie": "■",
+  "osvetlenie-brovej": "☼",
+  "combo-brovi-lami": "✶",
+  "narashhivanie-resnic": "❂",
+  "korrekciya-narashhivaniya": "✔",
+  "snyatie-narashhivaniya": "✕",
+};
 
+export default function UslugiPage() {
   return (
     <>
       <div className="max-w-[1020px] mx-auto px-6">
         <Breadcrumbs items={[{ label: "Услуги" }]} />
       </div>
 
-      <section className="py-16 lg:py-22 px-6">
-        <div className="max-w-[1020px] mx-auto">
+      <section className="py-[88px] px-6">
+        <div className="text-center max-w-[520px] mx-auto mb-14">
           <FadeIn>
-            <p className="eyebrow mb-4">Услуги</p>
-            <h1
-              className="heading-section"
-              style={{ fontSize: "clamp(28px, 3.5vw, 40px)" }}
-            >
+            <p className="eyebrow mb-[14px]">Услуги</p>
+            <h1 className="heading-section mb-[14px]" style={{ fontSize: "clamp(28px, 3.5vw, 40px)" }}>
               Все услуги студии
             </h1>
+            <p className="text-[15px] font-light leading-[1.6] text-stone">
+              Профессиональный уход за бровями и ресницами
+            </p>
           </FadeIn>
-
-          <FadeIn>
-            <h2 className="mt-14 font-display text-[24px] font-light text-ink mb-6">
-              Мастер Татьяна — брови и ламинирование
-            </h2>
-          </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {tatyana.map((s) => (
-              <FadeIn key={s.id}>
-                <ServiceCard service={s} />
-              </FadeIn>
-            ))}
-          </div>
-
-          <FadeIn>
-            <h2 className="mt-16 font-display text-[24px] font-light text-ink mb-6">
-              Мастер Мария — наращивание ресниц
-            </h2>
-          </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {maria.map((s) => (
-              <FadeIn key={s.id}>
-                <ServiceCard service={s} />
-              </FadeIn>
-            ))}
-          </div>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 max-w-[1020px] mx-auto">
+          {services.map((s) => (
+            <FadeIn key={s.id}>
+              <ServiceCard
+                icon={icons[s.slug] || "●"}
+                slug={s.slug}
+                name={s.name}
+                description={s.description}
+                duration={s.duration}
+              />
+            </FadeIn>
+          ))}
         </div>
       </section>
 

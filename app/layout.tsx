@@ -52,8 +52,8 @@ const businessJsonLd = {
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 55.7282,
-    longitude: 37.578,
+    latitude: 55.725103,
+    longitude: 37.582313,
   },
   openingHours: "Mo-Su 12:00-21:00",
   priceRange: "₽₽",

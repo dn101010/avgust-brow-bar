@@ -38,20 +38,22 @@ export default function CoursesPage() {
         <Breadcrumbs items={[{ label: "Обучение" }]} />
       </div>
 
-      <section className="py-16 lg:py-22 px-6">
+      <section className="py-[88px] px-6">
         <div className="max-w-[1020px] mx-auto">
-          <FadeIn>
-            <p className="eyebrow mb-4">Обучение</p>
-            <h1
-              className="heading-section"
-              style={{ fontSize: "clamp(28px, 3.5vw, 40px)" }}
-            >
-              Бьюти формула
-            </h1>
-            <p className="mt-4 font-body text-[16px] font-light text-stone max-w-[520px] leading-relaxed">
-              Авторские курсы от Татьяны Шублетовой. Индивидуальный подход, создание портфолио, поддержка после обучения.
-            </p>
-          </FadeIn>
+          <div className="text-center max-w-[520px] mx-auto mb-14">
+            <FadeIn>
+              <p className="eyebrow mb-[14px]">Обучение</p>
+              <h1
+                className="heading-section mb-[14px]"
+                style={{ fontSize: "clamp(28px, 3.5vw, 40px)" }}
+              >
+                Бьюти формула
+              </h1>
+              <p className="text-[15px] font-light leading-[1.6] text-stone">
+                Авторские курсы от Татьяны Шублетовой. Индивидуальный подход, создание портфолио, поддержка после обучения.
+              </p>
+            </FadeIn>
+          </div>
 
           {/* Профессия бровист */}
           <FadeIn>
@@ -177,7 +179,7 @@ export default function CoursesPage() {
 
           {/* FAQ */}
           <FadeIn>
-            <div className="mt-22">
+            <div className="mt-20">
               <p className="eyebrow mb-4">Вопросы</p>
               <h2
                 className="heading-section mb-10"
@@ -191,10 +193,7 @@ export default function CoursesPage() {
         </div>
       </section>
 
-      <CTABanner
-        title="Хотите стать бровистом?"
-        subtitle="Напишите — расскажу подробнее о программе и подберём удобные даты"
-      />
+      <CTABanner />
     </>
   );
 }

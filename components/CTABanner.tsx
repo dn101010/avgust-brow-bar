@@ -1,58 +1,37 @@
 import { contacts } from "@/data/contacts";
 
-interface CTABannerProps {
-  title?: string;
-  subtitle?: string;
-}
-
-export default function CTABanner({
-  title = "Готовы записаться?",
-  subtitle = "Выберите удобное время онлайн или напишите в мессенджер",
-}: CTABannerProps) {
+export default function CTABanner() {
   return (
-    <section className="bg-ink py-22 px-6 relative overflow-hidden">
+    <section
+      className="relative py-[72px] px-6 text-center overflow-hidden"
+      style={{ background: "linear-gradient(135deg, #2e2520, #1f1b18)" }}
+    >
       <div
         className="absolute inset-0"
-        style={{
-          background: "radial-gradient(ellipse at 70% 50%, rgba(197,164,126,0.10) 0%, transparent 60%)",
-        }}
+        style={{ background: "radial-gradient(ellipse at center, rgba(197,164,126,0.08), transparent 60%)" }}
       />
-      <div className="max-w-[640px] mx-auto text-center relative z-10">
-        <p className="eyebrow mb-5">Запись</p>
-        <h2
-          className="font-display font-light text-white leading-[1.15]"
-          style={{ fontSize: "clamp(28px, 3.5vw, 40px)" }}
-        >
-          {title}
+      <div className="relative z-[1] max-w-[500px] mx-auto">
+        <h2 className="font-display leading-[1.2] text-white mb-[14px]" style={{ fontSize: "clamp(26px, 3vw, 36px)", fontWeight: 300 }}>
+          Запишитесь на<br />удобное время
         </h2>
-        <p className="mt-4 font-body text-[16px] font-light text-[rgba(255,255,255,0.55)]">
-          {subtitle}
+        <p className="text-[15px] font-light text-[rgba(255,255,255,0.45)] mb-7">
+          Онлайн-запись 24/7. Бесплатный паркинг.
         </p>
-        <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a
-            href={contacts.yclients}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-body text-[14px] font-medium tracking-[0.4px] bg-gold hover:bg-gold-hover text-white rounded-sm px-8 py-[13px] hover:shadow-gold-glow hover:-translate-y-px transition-all"
-          >
-            Выбрать время
-          </a>
-          <a
-            href={contacts.telegram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-body text-[14px] font-medium tracking-[0.4px] text-[rgba(255,255,255,0.65)] border border-[rgba(255,255,255,0.18)] rounded-sm px-8 py-[13px] hover:border-[rgba(255,255,255,0.40)] hover:text-white transition-all"
-          >
-            Написать в Telegram
-          </a>
-        </div>
-        <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center text-[rgba(255,255,255,0.40)] font-body text-[13px] font-light">
-          <a href={contacts.phonePrimaryHref} className="hover:text-white transition-colors">
-            {contacts.phonePrimary}
-          </a>
-          <a href={`mailto:${contacts.email}`} className="hover:text-white transition-colors">
-            {contacts.email}
-          </a>
+        <a
+          href={contacts.yclients}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block text-[14px] font-medium py-[13px] px-8 bg-gold text-white rounded-sm hover:bg-gold-hover hover:shadow-gold-glow transition-all"
+        >
+          Выбрать время
+        </a>
+        <div className="flex justify-center gap-7 mt-7 flex-wrap">
+          <span className="text-[13px] text-[rgba(255,255,255,0.35)]">
+            ⚊ м. Фрунзенская, 5 мин
+          </span>
+          <span className="text-[13px] text-[rgba(255,255,255,0.35)]">
+            ☎ {contacts.phonePrimary}
+          </span>
         </div>
       </div>
     </section>
