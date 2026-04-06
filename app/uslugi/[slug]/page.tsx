@@ -61,12 +61,30 @@ export default function ServicePage({ params }: Props) {
     },
   };
 
+  const faqJsonLd = service.faq?.length
+    ? {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: service.faq.map((f) => ({
+          "@type": "Question",
+          name: f.question,
+          acceptedAnswer: { "@type": "Answer", text: f.answer },
+        })),
+      }
+    : null;
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
       />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
 
       <div className="max-w-[1020px] mx-auto px-6">
         <Breadcrumbs
@@ -84,10 +102,9 @@ export default function ServicePage({ params }: Props) {
             <div className="rounded-xl overflow-hidden shadow-soft mb-12">
               <OptionalImage
                 src={imgSrc}
-                alt={service.name}
+                alt={`${service.name} — результат работы в студии Август`}
                 aspectRatio="16/9"
                 radius="12px"
-                placeholderText="Фото скоро"
               />
             </div>
           </FadeIn>

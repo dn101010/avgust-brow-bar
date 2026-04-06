@@ -85,7 +85,7 @@ export default function HomePage() {
                   alt={item.title}
                   aspectRatio="4/3"
                   radius="0"
-                  placeholderText="Фото скоро"
+                  placeholderText=""
                   dark
                 />
                 <div className="p-5">
@@ -109,7 +109,7 @@ export default function HomePage() {
                   alt="Татьяна Шублетова — бровист-эксперт"
                   aspectRatio="4/5"
                   radius="12px"
-                  placeholderText="Фото Татьяны"
+                  placeholderText=""
                 />
               </div>
               <div className="absolute -inset-[10px] border border-bloom/40 rounded-[14px] pointer-events-none" />
@@ -154,7 +154,7 @@ export default function HomePage() {
                   alt="Мария — мастер по наращиванию ресниц"
                   aspectRatio="4/5"
                   radius="12px"
-                  placeholderText="Фото Марии"
+                  placeholderText=""
                 />
               </div>
               <div className="absolute -inset-[10px] border border-bloom/40 rounded-[14px] pointer-events-none" />

@@ -37,10 +37,9 @@ export default function ServiceCard({ name, description, duration, slug, image }
       {/* Photo */}
       <OptionalImage
         src={resolvedImg}
-        alt={name}
+        alt={`${name} в студии Август`}
         aspectRatio="3/2"
         radius="0"
-        placeholderText="Фото скоро"
       />
 
       {/* Content */}

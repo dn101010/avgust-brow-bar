@@ -60,7 +60,7 @@ export default function AboutPage() {
                   alt="Татьяна Шублетова"
                   aspectRatio="4/5"
                   radius="8px"
-                  placeholderText="Фото Татьяны"
+                  placeholderText=""
                 />
                 <div className="absolute -inset-[10px] border border-bloom/40 rounded-[14px] pointer-events-none" />
               </div>
@@ -117,7 +117,7 @@ export default function AboutPage() {
                   alt="Мария"
                   aspectRatio="4/5"
                   radius="8px"
-                  placeholderText="Фото Марии"
+                  placeholderText=""
                 />
                 <div className="absolute -inset-[10px] border border-bloom/40 rounded-[14px] pointer-events-none" />
               </div>

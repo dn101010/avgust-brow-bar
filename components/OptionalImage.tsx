@@ -17,7 +17,7 @@ export default function OptionalImage({
   alt,
   aspectRatio = "3/2",
   radius = "8px",
-  placeholderText = "Фото скоро",
+  placeholderText = "",
   dark = false,
 }: Props) {
   const [failed, setFailed] = useState(false);

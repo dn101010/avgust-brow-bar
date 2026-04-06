@@ -79,7 +79,10 @@ const businessJsonLd = {
   openingHours: "Mo-Su 12:00-21:00",
   priceRange: "₽₽",
   image: `${siteUrl}/og-image.jpg`,
-  sameAs: ["https://t.me/avgust_brows"],
+  sameAs: [
+    "https://t.me/avgust_brows",
+    "https://www.instagram.com/shubletova_brows/",
+  ],
 };
 
 export default function RootLayout({

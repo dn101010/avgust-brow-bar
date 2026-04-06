@@ -33,7 +33,7 @@ export default function UslugiPage() {
               Все услуги студии
             </h1>
             <p className="text-[15px] font-light leading-[1.6] text-stone">
-              Профессиональный уход за бровями и ресницами
+              Профессиональное оформление бровей и наращивание ресниц в Хамовниках. Запись к мастерам в Москве, 5 минут от метро Фрунзенская.
             </p>
           </FadeIn>
         </div>
@@ -69,7 +69,7 @@ export default function UslugiPage() {
                 alt={`Работа ${i + 1}`}
                 aspectRatio="1/1"
                 radius="8px"
-                placeholderText="Фото работ скоро"
+                placeholderText=""
               />
             </FadeIn>
           ))}
