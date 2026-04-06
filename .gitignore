@@ -7,7 +7,7 @@ out/
 *.tsbuildinfo
 next-env.d.ts
 .DS_Store
-public/*.jpg
+# Original service photos (large, uploaded separately)
 public/*.JPG
 public/*.HEIC
 public/*.heic

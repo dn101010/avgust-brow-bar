@@ -18,9 +18,14 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: Props): Metadata {
   const service = getServiceBySlug(params.slug);
   if (!service) return {};
+  const title = `${service.name} — ${service.price} — Август, Москва`;
+  const description = `${service.description}. Запись в студию Август, Хамовники, 5 мин от м. Фрунзенская.`;
+  const url = `https://avgustbrows.ru/uslugi/${params.slug}`;
   return {
-    title: `${service.name} — ${service.price}`,
-    description: `${service.description}. Запись в студию Август, Хамовники, 5 мин от м. Фрунзенская.`,
+    title,
+    description,
+    openGraph: { title, description, url },
+    alternates: { canonical: url },
   };
 }
 

@@ -9,6 +9,12 @@ export const metadata: Metadata = {
   title: "О мастерах — Август, Хамовники",
   description:
     "Татьяна Шублетова: 5000+ бровей, 5 лет опыта. Мария: наращивание ресниц в натуральных техниках.",
+  openGraph: {
+    title: "О мастерах — Август, Хамовники",
+    description: "Татьяна Шублетова: 5000+ бровей, 5 лет опыта. Мария: наращивание ресниц в натуральных техниках.",
+    url: "https://avgustbrows.ru/about",
+  },
+  alternates: { canonical: "https://avgustbrows.ru/about" },
 };
 
 export default function AboutPage() {

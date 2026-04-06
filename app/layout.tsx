@@ -20,18 +20,39 @@ const nunito = Nunito_Sans({
   display: "swap",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_DOMAIN || "https://avgustbrows.ru";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_DOMAIN || "https://avgustbrows.ru"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Август — Студия бровей и ресниц в Хамовниках, Москва",
     template: "%s | Август",
   },
   description:
-    "Оформление бровей, ламинирование ресниц, наращивание. 5 мин от м. Фрунзенская. Онлайн-запись, бесплатная парковка.",
+    "Оформление бровей, ламинирование и наращивание ресниц. Фрунзенская наб. 30с5, 5 мин от м. Фрунзенская. Запись онлайн.",
+  icons: {
+    icon: [
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+  },
+  manifest: "/manifest.webmanifest",
   openGraph: {
     type: "website",
     locale: "ru_RU",
-    siteName: "Август",
+    siteName: "Август — Студия бровей и ресниц",
+    images: [
+      {
+        url: "/og-image.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Август — Студия бровей и ресниц в Хамовниках",
+      },
+    ],
+  },
+  alternates: {
+    canonical: siteUrl,
   },
 };
 
@@ -39,13 +60,13 @@ const businessJsonLd = {
   "@context": "https://schema.org",
   "@type": "BeautySalon",
   name: "Август",
-  description: "Студия бровей и ресниц в Хамовниках, Москва",
-  url: "https://avgustbrows.ru",
-  telephone: "+7 (999) 563-76-12",
+  description: "Студия бровей и ресниц в Хамовниках",
+  url: siteUrl,
+  telephone: "+79995637612",
   email: "shubletovabrows@yandex.ru",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "Фрунзенская набережная 30с5",
+    streetAddress: "Фрунзенская набережная 30с5, 2 этаж, 205 кабинет",
     addressLocality: "Москва",
     addressRegion: "Москва",
     addressCountry: "RU",
@@ -57,6 +78,8 @@ const businessJsonLd = {
   },
   openingHours: "Mo-Su 12:00-21:00",
   priceRange: "₽₽",
+  image: `${siteUrl}/og-image.jpg`,
+  sameAs: ["https://t.me/avgust_brows"],
 };
 
 export default function RootLayout({

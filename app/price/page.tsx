@@ -5,9 +5,15 @@ import FadeIn from "@/components/FadeIn";
 import { services } from "@/data/services";
 
 export const metadata: Metadata = {
-  title: "Цены — Август, Москва",
+  title: "Цены — Август, студия бровей и ресниц, Москва",
   description:
-    "Актуальный прайс: оформление бровей от 1800₽, ламинирование ресниц 4200₽, наращивание 3000₽.",
+    "Актуальный прайс: оформление бровей от 1 800 ₽, ламинирование 4 200 ₽, наращивание 3 000 ₽.",
+  openGraph: {
+    title: "Цены — Август, студия бровей и ресниц, Москва",
+    description: "Актуальный прайс: оформление бровей от 1 800 ₽, ламинирование 4 200 ₽, наращивание 3 000 ₽.",
+    url: "https://avgustbrows.ru/price",
+  },
+  alternates: { canonical: "https://avgustbrows.ru/price" },
 };
 
 export default function PricePage() {

@@ -7,9 +7,15 @@ import OptionalImage from "@/components/OptionalImage";
 import { services } from "@/data/services";
 
 export const metadata: Metadata = {
-  title: "Услуги студии Август — Брови и ресницы Москва",
+  title: "Услуги и цены — Август, Москва",
   description:
-    "Все услуги: укладка, архитектура, окрашивание, ламинирование, наращивание ресниц, мужское оформление. Хамовники.",
+    "Долговременная укладка, архитектура, окрашивание бровей, ламинирование и наращивание ресниц. Хамовники, Москва.",
+  openGraph: {
+    title: "Услуги и цены — Август, Москва",
+    description: "Долговременная укладка, архитектура, окрашивание бровей, ламинирование и наращивание ресниц. Хамовники, Москва.",
+    url: "https://avgustbrows.ru/uslugi",
+  },
+  alternates: { canonical: "https://avgustbrows.ru/uslugi" },
 };
 
 export default function UslugiPage() {

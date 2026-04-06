@@ -5,7 +5,13 @@ import FadeIn from "@/components/FadeIn";
 export const metadata: Metadata = {
   title: "Отзывы клиентов — Август, Москва",
   description:
-    "Реальные отзывы клиентов студии Август с Яндекс.Карт. Оформление бровей, ламинирование ресниц, Хамовники.",
+    "Реальные отзывы клиентов студии Август с Яндекс.Карт.",
+  openGraph: {
+    title: "Отзывы клиентов — Август, Москва",
+    description: "Реальные отзывы клиентов студии Август с Яндекс.Карт.",
+    url: "https://avgustbrows.ru/otzyvy",
+  },
+  alternates: { canonical: "https://avgustbrows.ru/otzyvy" },
 };
 
 export default function OtzyvyPage() {

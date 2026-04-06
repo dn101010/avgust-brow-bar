@@ -9,7 +9,13 @@ import { contacts } from "@/data/contacts";
 export const metadata: Metadata = {
   title: "Обучение бровистов — Бьюти формула, Москва",
   description:
-    "Курсы бровиста с нуля и повышение квалификации. Индивидуально, с портфолио. От 20 000₽.",
+    "Курсы бровиста с нуля и повышение квалификации. Индивидуально, с портфолио. От 20 000 ₽.",
+  openGraph: {
+    title: "Обучение бровистов — Бьюти формула, Москва",
+    description: "Курсы бровиста с нуля и повышение квалификации. Индивидуально, с портфолио. От 20 000 ₽.",
+    url: "https://avgustbrows.ru/courses",
+  },
+  alternates: { canonical: "https://avgustbrows.ru/courses" },
 };
 
 export default function CoursesPage() {

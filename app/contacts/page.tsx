@@ -6,7 +6,13 @@ import { contacts, location } from "@/data/contacts";
 export const metadata: Metadata = {
   title: "Контакты — Август, Фрунзенская наб. 30с5, Москва",
   description:
-    "Адрес, как добраться, бесплатная парковка. 5 мин от м. Фрунзенская.",
+    "Адрес, как добраться, часы работы 12:00-21:00. 5 мин от м. Фрунзенская. Бесплатная парковка.",
+  openGraph: {
+    title: "Контакты — Август, Фрунзенская наб. 30с5, Москва",
+    description: "Адрес, как добраться, часы работы 12:00-21:00. 5 мин от м. Фрунзенская. Бесплатная парковка.",
+    url: "https://avgustbrows.ru/contacts",
+  },
+  alternates: { canonical: "https://avgustbrows.ru/contacts" },
 };
 
 export default function ContactsPage() {
